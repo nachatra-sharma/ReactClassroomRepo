@@ -253,3 +253,125 @@ npx parcel build index.html
 6. What is Tree Shaking ?
 7. What is HMR (Hot module replacement) ?
 8. what is dist folder ?
+
+# Module 3
+
+### Package.json
+
+make this changes it helps us to run and build our react project fastly and it's a industry best parctices.
+
+```javascript
+"scripts": {
+    "start": "parcel index.html", // dev build
+    "build": "parcel build index.html", // production build
+}
+```
+
+> For dev build run **npm run start** or **npm start**\
+> For production build run command **npm run build**
+
+### React.createElement -> Javascript Object -> HTML Element (Render)
+
+## JSX (Javascript XML)
+
+JSX is not html inside javascript. But we can say JSX have HTML like syntax.
+
+```jsx
+const heading = <h1>Hello World</h1>;
+```
+
+```jsx
+const heading = (
+    <h1 id="title">This is a JSX title</h1>
+    <p>This is a sample para.</p>
+)
+```
+
+### JSX Transpile before it reaches JS engine -> Parcel -> babel
+
+> **JSX -> React.createElement -> JS Object -> HTML Element(Render)**
+
+```jsx
+const heading = <h1 className='heading'>Namaste Developer</h1>;
+```
+
+> why we use className instead of class?\
+> Because class is a keyword in javascript so we can't use class directly so we use className
+
+## React Component
+
+1. Functional Component
+2. Class Based Component
+
+> <strong>What is functional component?</Strong>\
+> <br>
+> It is a normal javascript function. that return some peace of JSX code and react Element.\
+> <br>
+> While creating functional component we write first alphabet in captial latter.
+
+### React Functional Component Example
+
+```jsx
+const Heading = () => {
+  return (
+    <div>
+      <h1>Namaste React</h1>
+      <p>This is a sample para</p>
+    </div>
+  );
+};
+```
+
+### Passing element in a functional component
+
+```javascript
+const HeaderComponent = () => {
+  return (
+    <div>
+      {heading} // this is how we pass a element
+      <h1>This is a react functional component</h1>
+      <p>This is a sample para</p>
+    </div>
+  );
+};
+```
+
+### Different ways to render something on web
+
+```jsx
+root.render(<HeaderComponent />);
+root.render(<HeaderComponent></HeaderComponent>);
+// root.render({HeaderComponent()}); we can't do this
+```
+
+### component composition -
+
+Passing component inside component is known as component composition.
+
+```jsx
+const ComponentComposition = () => {
+  return (
+    <div>
+      <h1>How to nest a component inside component.</h1>
+      {HeaderComponent()} // like this
+      </HeaderComponent> // like this
+      <HeaderComponent></HeaderComponent> // like this
+    </div>
+  );
+};
+```
+
+### React Reconciliation
+
+is the process by which react update the UI to reflect changes in the component state. React uses a virtual dom to update the UI.
+
+## Question
+
+1. What is JSX ?
+2. React.createElement vs JSX
+3. Benefit of JSX
+4. Behind the scenes of JSX
+5. Babel and parcel role in jsx
+6. Component
+7. Functional Component
+8. Component Composition
