@@ -375,3 +375,89 @@ is the process by which react update the UI to reflect changes in the component 
 6. Component
 7. Functional Component
 8. Component Composition
+
+# Module 4
+
+### Key Points
+
+1. Any piece of jsx component you write can have only one parent.
+2. <React.Fragment></React.Fragment> or <></> empty tags
+3. Props is like parameter to a function.
+4. A representation of actual DOM is known as virtual DOM.
+5. React Fiber is the new reconciliation engine in react 16 for diff-algorithm.
+6. If single parent have multiple child we have to give all the child a unique key.
+
+## Question
+
+1. Why we need keys in react? When do we need keys in react?
+2. What is props in react?
+
+# Module 5
+
+### Folder Structure
+
+> Seperate file for seperate component.
+
+```javascript
+/***
+ * Folder Structure
+ *
+ * src (Folder)
+ *  -> App.js (File)
+ *  -> Components (Folder)
+ *    -> Component (Files)
+ *  -> Utils (Folder)
+ *    -> Constants.js (File)
+ *
+ *
+ *
+ *
+ *
+ ***/
+```
+
+There are two type of moduling in React.
+
+1. ES Moduling
+2. CJS Moduling
+   > React is using ES Moduling
+
+There are two type of import and export in ReactJS
+
+1. Import -> Named Import and Default Import
+2. Export -> Named Export and Default Export
+
+```JavaScript
+/**
+ * Import
+ * 1. import {Body} from './Components/Body.jsx'; (Named Import)
+ * 2. import Body from './Components/Body.jsx'; (Default Import)
+ *
+ * Export
+ * 1. export const Body = () => {return(JSX)}; (Named Export)
+ * 2. export default Body;
+ **/
+```
+
+> From single file if we want to export multiple things we use named export.
+
+### Hooks
+
+> Hooks are the normal JS function.
+
+```javascript
+import { useState } from "react";
+
+const [listData, setListData] = useState([]);
+```
+
+> Whenever a state variable update react will rerender that component.
+
+#### Diff Algo
+
+> It finds oyt the difference between two virtual dom first is previous virtual dom and second is updated virtual dom.
+
+## Question
+
+1. Why do we need a useState hook?
+2. What are react hooks?
